@@ -1,8 +1,8 @@
 <?php
   
-$name = addcslashes($_POST['name']);
-$email = addcslashes($_POST['email']);
-$message = addcslashes($_POST['message']);
+$name = $_POST['name'];
+$email = $_POST['email'];
+$message = $_POST['message'];
 
 $to = "contato@midiatizou.com.br";
 $subject = "Formulario Home";
