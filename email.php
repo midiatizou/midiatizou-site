@@ -6,17 +6,13 @@ $message = addcslashes($_POST[message]);
 
 $to = "contato@midiatizou.com.br";
 $subject = "Formulario contato";
-$body = "Nome".$name. "\r\n".
-        "Email".$email. "\r\n".
-        "Mensagem".$message;
+$body = "Nome".$name. "\r\n"."Email".$email."\r\n"."Mensagem".$message;
 
 ob_clean();
 
-$header = "From:ti@midiatizou.com.br"."\r\n".
-          "Replay-To:".$email."\r\n".
-          "X=Mailer:PHP/".phpversion();
+$header = "From:ti@midiatizou.com.br"."\r\n"."Replay-To:".$email."\r\n"."X=Mailer:PHP/".phpversion();
 
-if(mail($to, $subject, $body, $header)) {
+if(mail($to,$subject,$body,$header)) {
   echo("Email enviado com sucesso...");
 } else {
   echo("Email não pode ser enviado!");
