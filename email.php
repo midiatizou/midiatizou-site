@@ -10,6 +10,8 @@ $body = "Nome".$name. "\r\n".
         "Email".$email. "\r\n".
         "Mensagem".$message;
 
+ob_clean();
+
 $header = "From:ti@midiatizou.com.br"."\r\n".
           "Replay-To:".$email."\r\n".
           "X=Mailer:PHP/".phpversion();
