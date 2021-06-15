@@ -12,7 +12,7 @@ $body = "Nome".$name. "\r\n".
 
 $header = "From:ti@midiatizou.com.br"."\r\n".
           "Replay-To:".$email."\r\n".
-          "X-Mailer:PHP/".phpversion();
+          "X=Mailer:PHP/".phpversion();
 
 if(mail($to, $subject, $body, $header)) {
   echo("Email enviado com sucesso...");
