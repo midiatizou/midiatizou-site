@@ -13,7 +13,8 @@ ob_clean();
 $header = "From:".$email."\r\n"."Replay-To:".$email."\r\n"."X=Mailer:PHP/".phpversion();
 
 if(mail($to, $subject, $body, $header)) {
-  echo("Email enviado com sucesso...");
+  header("Location: https://midiatizou.com.br/obrigado/");
+
 } else {
   echo("Email não pode ser enviado!");
 }
