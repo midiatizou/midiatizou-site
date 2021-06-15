@@ -1,16 +1,16 @@
 <?php
   
-$name = addcslashes($_POST[name]);
-$email = addcslashes($_POST[email]);
-$message = addcslashes($_POST[message]);
+$name = addcslashes($_POST['name']);
+$email = addcslashes($_POST['email']);
+$message = addcslashes($_POST['message']);
 
 $to = "contato@midiatizou.com.br";
 $subject = "Formulario Home";
-$body = "Nome".$name. "\r\n"."Email".$email."\r\n"."Mensagem".$message;
+$body = "Nome".$name."\n"."Email".$email."\n"."Mensagem".$message;
 
 ob_clean();
 
-$header = "From:".$email."\r\n"."Replay-To:".$email."\r\n"."X=Mailer:PHP/".phpversion();
+$header = "From:".$email."\n"."Replay-To:".$email."\n"."X=Mailer:PHP/".phpversion();
 
 if(mail($to, $subject, $body, $header)) {
   header("Location: https://midiatizou.com.br/obrigado/");
