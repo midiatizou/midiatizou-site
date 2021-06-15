@@ -3,9 +3,13 @@
 
 <head>
   <meta charset="utf-8">
+  
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <title>Hello, AMPs</title>
-  <link rel="canonical" href="https://amp.dev/pt_br/documentation/guides-and-tutorials/start/create/basic_markup/">
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+
+  <title>Midiatizou</title>
+  <link rel="canonical" href="https://midiatizou.com.br">
   <meta name="viewport" content="width=device-width">
   <script type="application/ld+json">
       {
@@ -89,6 +93,38 @@
 
 <body>
   <h1>Midiatizou em construção</h1>
+
+  <div>
+    <form name="home-form" method="post" action-xhr="https://contato@midiatizou.com.br" target="_top">
+    <fieldset>
+      <label>
+        <span>Name:</span>
+        <input type="text"
+          name="name"
+          required>
+      </label>
+      <br>
+      <label>
+        <span>Email:</span>
+        <input type="email"
+          name="email"
+          required>
+      </label>
+      <br>
+      <input type="submit" value="Solicitar">
+    </fieldset>
+    <div submit-success>
+      <template type="amp-mustache">
+        Subscription successful!
+      </template>
+    </div>
+    <div submit-error>
+      <template type="amp-mustache">
+        Subscription failed!
+      </template>
+    </div>
+  </form>
+  </div>
 </body>
 
 </html>
