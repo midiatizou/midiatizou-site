@@ -1,5 +1,5 @@
 <?php
-header('AMP-Access-Control-Allow-Source-Origin: https://midiatizou.com.br');
+header('AMP-Access-Control-Allow-Source-Origin: https://midia');
 if(isset($_POST['email'])) {
      
     // CHANGE THE TWO LINES BELOW

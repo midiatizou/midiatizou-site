@@ -95,39 +95,19 @@
   <h1>Midiatizou em construção 2</h1>
 
   <div>
-    <form name="home-form" method="post" action-xhr="./email.php">
+    <form name="home-form" method="post" action-xhr="https://midiatizou.com.br/email.php">
     <fieldset>
-      <label>
-        <span>Name:</span>
-        <input type="text"
-          name="name"
-          required>
-      </label>
+      <input type="text" name="name" required>
       <br>
-      <label>
-        <span>Email:</span>
-        <input type="email"
-          name="email"
-          required>
-      </label>
+
+      <input type="email" name="email" required>
       <br>
-      <label>
-        <span>Mensagem:</span>
-        <textarea name="email" required></textarea>
-      </label>
+
+      <textarea name="email" required></textarea>
       <br>
+
       <input type="submit" value="Solicitar">
     </fieldset>
-    <div submit-success>
-      <template type="amp-mustache">
-        Subscription successful!
-      </template>
-    </div>
-    <div submit-error>
-      <template type="amp-mustache">
-        Subscription failed!
-      </template>
-    </div>
   </form>
   </div>
 </body>
