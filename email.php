@@ -1,11 +1,5 @@
 <?php
 
-if(!isset($_POST['name']) ||
-!isset($_POST['email']) ||
-!isset($_POST['message'])) {
-  died('We are sorry, but there appears to be a problem with the form you submitted.');      
-}
-
 $name = $_POST['name'];
 $email = $_POST['email'];
 $message = $_POST['message'];
@@ -13,8 +7,6 @@ $message = $_POST['message'];
 $to = "contato@midiatizou.com.br";
 $subject = "Formulario Home";
 $body = "Nome".$name."\n"."Email".$email."\n"."Mensagem".$message;
-
-ob_clean();
 
 $header = "From:".$email."\n"."Replay-To:".$email."\n"."X=Mailer:PHP/".phpversion();
 
