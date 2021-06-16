@@ -1,5 +1,5 @@
 <!doctype html>
-<html amp lang="en">
+<html amp lang="pt-br">
 
 <head>
   <meta charset="utf-8">
@@ -7,7 +7,8 @@
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
   <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
-
+  <script src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js" async="" custom-template="amp-mustache"></script>
+  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
   <title>Midiatizou</title>
   <link rel="canonical" href="https://midiatizou.com.br">
   <meta name="viewport" content="width=device-width">
@@ -29,6 +30,7 @@
       -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
       animation: -amp-start 8s steps(1, end) 0s 1 normal both
     }
+
     @-webkit-keyframes -amp-start {
       from {
         visibility: hidden
@@ -91,27 +93,34 @@
   </noscript>
   <style amp-custom>
     * {
-      padding:0;
+      padding: 0;
       margin: 0;
       box-sizing: border-box;
     }
+
     html {
       font-size: 10px;
     }
+
     .container {
       max-width: 1440px;
       width: 100%;
       padding: 1.6rem;
       margin: 0 auto;
     }
+
     .header {
       height: 80px;
       background-color: black;
       color: azure;
+      display: flex;
+      align-items: center;
     }
+
     .header__logo {
       font-size: 3.2rem;
     }
+
     .header__logo-container {
       display: flex;
       justify-content: center;
@@ -134,7 +143,13 @@
   </header>
 
   <section class="section-banner">
-    
+    <amp-list width="auto" height="100" layout="fixed-height" src="/amp.json">
+      <template type="amp-mustache">
+        <div class="url-entry">
+          <a href="{{url}}">{{title}}</a>
+        </div>
+      </template>
+    </amp-list>
   </section>
 
   <main class="container main">
@@ -142,27 +157,18 @@
       <fieldset>
         <input type="text" name="name" placeholder="name" required>
         <br>
-  
+
         <input type="email" name="email" placeholder="email" required>
         <br>
-  
+
         <textarea name="comments" placeholder="comments" required></textarea>
         <br>
-  
+
         <input type="submit" value="Solicitar">
       </fieldset>
-      <div submit-success>
-        <template type="amp-mustache">
-          Subscription successful!
-        </template>
-      </div>
-      <div submit-error>
-        <template type="amp-mustache">
-          Subscription failed!
-        </template>
-      </div>
     </form>
   </main>
+  <script async defer src="https://static.cdn.prismic.io/prismic.js?new=true&repo=midiatizou"></script>
 
 </body>
 
