@@ -1,5 +1,11 @@
 <?php
-  
+
+if(!isset($_POST['name']) ||
+!isset($_POST['email']) ||
+!isset($_POST['message'])) {
+  died('We are sorry, but there appears to be a problem with the form you submitted.');      
+}
+
 $name = $_POST['name'];
 $email = $_POST['email'];
 $message = $_POST['message'];
