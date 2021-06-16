@@ -1,19 +1,16 @@
 <?php
+header('AMP-Access-Control-Allow-Source-Origin: https://midiatizou.com.br');
 
-$name = $_POST['name'];
-$email = $_POST['email'];
-$message = $_POST['message'];
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $message = $_POST['message'];
 
-$to = "contato@midiatizou.com.br";
-$subject = "Formulario Home";
-$body = "Nome".$name."\n"."Email".$email."\n"."Mensagem".$message;
+  $to = "contato@midiatizou.com.br";
+  $subject = "Formulario Home";
+  $body = "Nome".$name."\n"."Email".$email."\n"."Mensagem".$message;
 
-$header = "From:".$email."\n"."Replay-To:".$email."\n"."X=Mailer:PHP/".phpversion();
+  $header = "From:".$email."\n"."Replay-To:".$email."\n"."X=Mailer:PHP/".phpversion();
 
-if(mail($to, $subject, $body, $header)) {
-  header("Location: https://midiatizou.com.br/obrigado/");
-} else {
-  echo("Email não pode ser enviado!");
-}
+@mail($to, $subject, $body, $header)
 
 ?>
