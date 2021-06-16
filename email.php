@@ -1,6 +1,5 @@
 <?php
 header('AMP-Access-Control-Allow-Source-Origin: https://midiatizou.com.br/');
-if(isset($_POST['email'])) {
      
     $email_to = "contato@midiatizou.com.br";
     $email_subject = "Lead - Home";
@@ -61,13 +60,4 @@ if(@mail($email_to, $email_subject, $email_message, $headers)) {
   header("AMP-Redirect-To: https://midiatizou.com.br/obrigado/");
 };
 
-?>
- 
-<!-- place your own success html below -->
- 
-Thank you for contacting us. We will be in touch with you very soon.
- 
-<?php
-}
-die();
 ?>

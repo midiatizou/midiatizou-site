@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  
+
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
   <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
@@ -29,7 +29,6 @@
       -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
       animation: -amp-start 8s steps(1, end) 0s 1 normal both
     }
-
     @-webkit-keyframes -amp-start {
       from {
         visibility: hidden
@@ -79,37 +78,92 @@
         visibility: visible
       }
     }
-  </style><noscript>
+  </style>
+  <noscript>
     <style amp-boilerplate>
       body {
         -webkit-animation: none;
         -moz-animation: none;
         -ms-animation: none;
-        animation: none
+        animation: none;
       }
     </style>
   </noscript>
+  <style amp-custom>
+    * {
+      padding:0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    html {
+      font-size: 10px;
+    }
+    .container {
+      max-width: 1440px;
+      width: 100%;
+      padding: 1.6rem;
+      margin: 0 auto;
+    }
+    .header {
+      height: 80px;
+      background-color: black;
+      color: azure;
+    }
+    .header__logo {
+      font-size: 3.2rem;
+    }
+    .header__logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .section-banner {
+      width: 100%;
+      height: 800px;
+      background-color: #ccc;
+    }
+  </style>
 </head>
 
 <body>
-  <h1>Midiatizou em construção 2</h1>
+  <header class="header">
+    <div class="header__logo-container container">
+      <p class="header__logo">Midiatizou</p>
+    </div>
+  </header>
 
-  <div>
+  <section class="section-banner">
+    
+  </section>
+
+  <main class="container main">
     <form name="home-form" method="post" action-xhr="https://midiatizou.com.br/email.php">
-    <fieldset>
-      <input type="text" name="name" placeholder="name" required>
-      <br>
+      <fieldset>
+        <input type="text" name="name" placeholder="name" required>
+        <br>
+  
+        <input type="email" name="email" placeholder="email" required>
+        <br>
+  
+        <textarea name="comments" placeholder="comments" required></textarea>
+        <br>
+  
+        <input type="submit" value="Solicitar">
+      </fieldset>
+      <div submit-success>
+        <template type="amp-mustache">
+          Subscription successful!
+        </template>
+      </div>
+      <div submit-error>
+        <template type="amp-mustache">
+          Subscription failed!
+        </template>
+      </div>
+    </form>
+  </main>
 
-      <input type="email" name="email" placeholder="email" required>
-      <br>
-
-      <textarea name="comments" placeholder="comments" required></textarea>
-      <br>
-
-      <input type="submit" value="Solicitar">
-    </fieldset>
-  </form>
-  </div>
 </body>
 
 </html>
